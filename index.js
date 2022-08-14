@@ -33,11 +33,11 @@ const hotelWebScraper = async (
   });
 
   if (!price) {
-    // Jei reikalingas <span> elementas buvo rastas, į konsolę išvedam kainą
-    await browser.close();
-    console.log('Hotel not found');
-  } else {
     // Jei reikiamo <span> elemento neradom, į konsolę parašom jog toks viešbutis nerastas
+    console.log('Hotel not found');
+    await browser.close();
+  } else {
+    // Jei reikalingas <span> elementas buvo rastas, į konsolę išvedam kainą
     console.log(price);
     await browser.close();
   }
